@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>HTA Execution Test</title>
+  <hta:application 
+    id="HTATestApp"
+    applicationname="HTA Test"
+    border="thin"
+    borderStyle="normal"
+    caption="yes"
+    showInTaskbar="yes"
+    singleInstance="yes"
+    sysMenu="yes"
+    windowState="normal" />
+  
+  <script language="VBScript">
+    ' Step 1: Confirm HTA execution
+    MsgBox "HTA file executed successfully!", 64, "HTA Test"
+
+    ' Step 2: Execute a local app for PoC (calc.exe)
+    Set shell = CreateObject("WScript.Shell")
+    shell.Run "calc.exe"
+  </script>
+</head>
+<body>
+  <h2>HTA Proof-of-Concept</h2>
+  <p>This file is used for safe execution testing only.</p>
+</body>
+</html>
